@@ -1,2 +1,2 @@
 # conversor-de-unidades
-calculo del indice de masa corporal
+calculo del indice *de masa corporal*
