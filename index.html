@@ -1,38 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>calculo imc</h1>
-    <p id="textito"></p>
-    <label for="peso">peso:</label>
-    <input onchange="mi_funcion()" type="number" id="peso" min="0" max="150">
-    <label for="altura">altura:</label>
-    <input onchange="mi_funcion()" type="number" id="altura" min="0" max="15">
-    <button onclick="mi_funcion()">calcular</button>
-    <img id="imagen_imc" src="./tendor.jpg">
+<input type="number" id="peso" placeholder="peso">
+<input type="number" id="altura" placeholder="altura en metros ej: 1.70">
+<button onclick="mi_funcion()">calcular</button>
+<br>
+<img id="imagen_imc" src="./tendor.jpg" width="155">
+
+<script>
+  function mi_funcion(){
+    var mi_imc = peso.value / (altura.value * altura.value);
     
-    <script type="text/javascript">
-        
-        function mi_funcion(){
-            var mi_imc = peso.value*(altura.value*altura.value);
-            textito.innertext =mi_imc;
-            if (mi_imc < 25){
-                imagen_imc.src="./tendor.jpg";
-                
-            } if (mi_imc >25 && mi_imc <40) {
-                imagen_imc.src="./mamado.jpg";
-                
-            }   
-            if (mi_imc >40 ) {
-                imagen_imc.src="./gordito.jpg";
-                
-            }   
-        }
-        </script>
-        
-        </body>
-        </html>
+    if (mi_imc < 25) {
+        imagen_imc.src = "./tendor.jpg";
+    }
+    if (mi_imc >= 25 && mi_imc < 40) {
+        imagen_imc.src = "./mamado.jpg";
+    }
+    if (mi_imc >= 40) {
+        imagen_imc.src = "./gordito.jpg";
+    }
+  }
+</script>
